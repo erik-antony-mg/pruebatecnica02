@@ -1,9 +1,10 @@
 package com.amg.pruebatecnica02.application.controllers;
 
 
-import com.amg.pruebatecnica02.application.dto.AuthRequestDto;
-import com.amg.pruebatecnica02.application.dto.AuthResponseDto;
+import com.amg.pruebatecnica02.infrastructure.rest.spring.dto.AuthRequestDto;
+import com.amg.pruebatecnica02.infrastructure.rest.spring.dto.AuthResponseDto;
 import com.amg.pruebatecnica02.application.services.impl.AuthenticationService;
+import com.amg.pruebatecnica02.infrastructure.rest.spring.resources.controllers.AuthController;
 import com.amg.pruebatecnica02.infrastructure.utils.JwtUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;

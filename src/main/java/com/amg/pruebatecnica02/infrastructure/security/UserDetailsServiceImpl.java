@@ -3,6 +3,7 @@ package com.amg.pruebatecnica02.infrastructure.security;
 import com.amg.pruebatecnica02.domain.entity.Usuario;
 import com.amg.pruebatecnica02.infrastructure.persistence.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,10 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
-public class UserDetailsServiceImpl implements UserDetailsService {
 
-    private final UsuarioRepository usuarioRepository;
+public class UserDetailsServiceImpl implements UserDetailsService {
+@Autowired
+    private  UsuarioRepository usuarioRepository;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

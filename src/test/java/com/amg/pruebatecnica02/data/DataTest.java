@@ -1,7 +1,7 @@
 package com.amg.pruebatecnica02.data;
 
-import com.amg.pruebatecnica02.application.dto.RequestDto;
-import com.amg.pruebatecnica02.application.dto.ResponseDto;
+import com.amg.pruebatecnica02.infrastructure.rest.spring.dto.RequestDto;
+import com.amg.pruebatecnica02.infrastructure.rest.spring.dto.ResponseDto;
 import com.amg.pruebatecnica02.domain.entity.Phone;
 import com.amg.pruebatecnica02.domain.entity.Roles;
 import com.amg.pruebatecnica02.domain.entity.Usuario;

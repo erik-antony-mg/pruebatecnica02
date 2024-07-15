@@ -1,7 +1,7 @@
 package com.amg.pruebatecnica02.application.services.impl;
 
-import com.amg.pruebatecnica02.application.dto.RequestDto;
-import com.amg.pruebatecnica02.application.dto.ResponseDto;
+import com.amg.pruebatecnica02.infrastructure.rest.spring.dto.RequestDto;
+import com.amg.pruebatecnica02.infrastructure.rest.spring.dto.ResponseDto;
 import com.amg.pruebatecnica02.application.services.UsuarioService;
 import com.amg.pruebatecnica02.domain.entity.Phone;
 import com.amg.pruebatecnica02.domain.entity.Roles;
@@ -11,6 +11,7 @@ import com.amg.pruebatecnica02.infrastructure.persistence.repository.RolesReposi
 import com.amg.pruebatecnica02.infrastructure.persistence.repository.UsuarioRepository;
 import com.amg.pruebatecnica02.infrastructure.persistence.specification.SearchUsuarioSpecification;
 import com.amg.pruebatecnica02.infrastructure.utils.JwtUtils;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -33,6 +34,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     private final PasswordEncoder passwordEncoder;
 
     @Override
+    @Transactional
     public ResponseDto createUsuario(RequestDto requestDto) {
 
             Usuario newUsuario= new Usuario();
@@ -88,6 +90,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
+    @Transactional
     public ResponseDto deleteUser(String email) {
         Usuario usuario = usuarioRepository.findUsuarioByEmail(email)
                 .orElseThrow(()-> new UsuarioNotFountException("usuario no encontrado"));
@@ -103,6 +106,4 @@ public class UsuarioServiceImpl implements UsuarioService {
                 usuario.getIsActive()
         );
     }
-
-
 }

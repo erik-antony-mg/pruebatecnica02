@@ -1,7 +1,7 @@
 package com.amg.pruebatecnica02.application.services;
 
-import com.amg.pruebatecnica02.application.dto.RequestDto;
-import com.amg.pruebatecnica02.application.dto.ResponseDto;
+import com.amg.pruebatecnica02.infrastructure.rest.spring.dto.RequestDto;
+import com.amg.pruebatecnica02.infrastructure.rest.spring.dto.ResponseDto;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

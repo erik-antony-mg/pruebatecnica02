@@ -1,11 +1,11 @@
 package com.amg.pruebatecnica02.application.controllers;
 
-import com.amg.pruebatecnica02.application.dto.RequestDto;
-import com.amg.pruebatecnica02.application.dto.ResponseDto;
+import com.amg.pruebatecnica02.infrastructure.rest.spring.dto.RequestDto;
+import com.amg.pruebatecnica02.infrastructure.rest.spring.dto.ResponseDto;
 import com.amg.pruebatecnica02.application.services.UsuarioService;
 import com.amg.pruebatecnica02.data.DataTest;
+import com.amg.pruebatecnica02.infrastructure.rest.spring.resources.controllers.UsuarioController;
 import com.amg.pruebatecnica02.infrastructure.utils.JwtUtils;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +17,6 @@ import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
-import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
@@ -75,6 +74,7 @@ class UsuarioControllerTest {
     }
     @Test
      void testListarUsuario_returnReturnListResponseDto() throws Exception {
+
 
         List<ResponseDto> usuarios = DataTest.responseDtoList();
         when(usuarioService.listarUsuario(anyString(),anyString(),any(),any(),anyString()))

@@ -1,4 +1,4 @@
-package com.amg.pruebatecnica02.application.dto;
+package com.amg.pruebatecnica02.infrastructure.rest.spring.dto;
 
 import java.time.LocalDate;
 import java.util.UUID;

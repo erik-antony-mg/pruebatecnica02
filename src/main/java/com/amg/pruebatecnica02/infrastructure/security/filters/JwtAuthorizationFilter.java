@@ -6,6 +6,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpHeaders;
 import org.springframework.lang.NonNull;
@@ -19,18 +20,28 @@ import org.springframework.web.servlet.HandlerExceptionResolver;
 
 import java.io.IOException;
 
-@Component
+//@Component
 public class JwtAuthorizationFilter extends OncePerRequestFilter {
 
-private final JwtUtils jwtUtils;
-    private final UserDetailsService userDetailsService;
+//    private final JwtUtils jwtUtils;
+//    private final UserDetailsService userDetailsService;
+//    private final HandlerExceptionResolver resolver;
+//
+//    public JwtAuthorizationFilter(JwtUtils jwtUtils,
+//                                  UserDetailsService userDetailsService,
+//                                  @Qualifier("handlerExceptionResolver") HandlerExceptionResolver resolver) {
+//        this.jwtUtils = jwtUtils;
+//        this.userDetailsService = userDetailsService;
+//        this.resolver = resolver;
+//    }
+    @Autowired
+    private JwtUtils jwtUtils;
+    @Autowired
+    private UserDetailsService userDetailsService;
     private final HandlerExceptionResolver resolver;
 
-    public JwtAuthorizationFilter(JwtUtils jwtUtils,
-                                  UserDetailsService userDetailsService,
-                                  @Qualifier("handlerExceptionResolver") HandlerExceptionResolver resolver) {
-        this.jwtUtils = jwtUtils;
-        this.userDetailsService = userDetailsService;
+    @Autowired
+    public JwtAuthorizationFilter(@Qualifier("handlerExceptionResolver") HandlerExceptionResolver resolver) {
         this.resolver = resolver;
     }
 

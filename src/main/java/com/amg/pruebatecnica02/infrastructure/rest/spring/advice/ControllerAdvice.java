@@ -1,4 +1,4 @@
-package com.amg.pruebatecnica02.application.advice;
+package com.amg.pruebatecnica02.infrastructure.rest.spring.advice;
 
 import com.amg.pruebatecnica02.domain.exceptions.JwtCustomException;
 import org.springframework.http.HttpStatus;

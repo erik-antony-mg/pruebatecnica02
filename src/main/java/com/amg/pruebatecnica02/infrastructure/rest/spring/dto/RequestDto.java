@@ -1,6 +1,7 @@
-package com.amg.pruebatecnica02.application.dto;
+package com.amg.pruebatecnica02.infrastructure.rest.spring.dto;
 
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
@@ -13,6 +14,7 @@ public record RequestDto(
        String name,
        @NotBlank(message = "el campo email no debe estar vacio !!")
        @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$" ,message = "debe tener el formato example@exp.com")
+
        String email,
        @NotBlank (message = "el campo password no debe estar vacio !!")
        @Pattern(

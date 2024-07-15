@@ -1,9 +1,7 @@
 package com.amg.pruebatecnica02.application.services.impl;
 
-import com.amg.pruebatecnica02.application.dto.RequestDto;
-import com.amg.pruebatecnica02.application.dto.ResponseDto;
+import com.amg.pruebatecnica02.infrastructure.rest.spring.dto.ResponseDto;
 import com.amg.pruebatecnica02.data.DataTest;
-import com.amg.pruebatecnica02.domain.entity.Roles;
 import com.amg.pruebatecnica02.domain.entity.Usuario;
 import com.amg.pruebatecnica02.domain.exceptions.UsuarioNotFountException;
 import com.amg.pruebatecnica02.infrastructure.persistence.repository.RolesRepository;

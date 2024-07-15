@@ -1,14 +1,11 @@
 package com.amg.pruebatecnica02.application.services.impl;
 
-import com.amg.pruebatecnica02.application.dto.AuthRequestDto;
-import com.amg.pruebatecnica02.application.dto.AuthResponseDto;
-import com.amg.pruebatecnica02.application.dto.ResponseDto;
+import com.amg.pruebatecnica02.infrastructure.rest.spring.dto.AuthRequestDto;
+import com.amg.pruebatecnica02.infrastructure.rest.spring.dto.AuthResponseDto;
 import com.amg.pruebatecnica02.data.DataTest;
 import com.amg.pruebatecnica02.domain.entity.Usuario;
-import com.amg.pruebatecnica02.domain.exceptions.UsuarioNotFountException;
 import com.amg.pruebatecnica02.infrastructure.persistence.repository.UsuarioRepository;
 import com.amg.pruebatecnica02.infrastructure.utils.JwtUtils;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -22,7 +19,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.anyString;
 
 @ExtendWith(MockitoExtension.class)
 class AuthenticationServiceTest {
